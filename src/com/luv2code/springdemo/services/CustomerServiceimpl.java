@@ -19,5 +19,23 @@ public class CustomerServiceimpl implements CustomerService {
 	public List<Customer> getCustomers() {
 		return customerdaoobj.getCustomers();
 	}
+	@Override
+	@Transactional
+	public void savCustomerService(Customer thecustomer) {
+		
+		customerdaoobj.saveCustomer(thecustomer);
+	}
+	@Override
+	@Transactional
+	public Customer updateCustomerService(int id) {
+		return customerdaoobj.getCustomersbyID(id);
+		
+	}
+	@Override
+	@Transactional
+	public void deleteCustomerService(int id) {
+		customerdaoobj.deleteCustomerbyID(id);
+		
+	}
 
 }
